@@ -49,10 +49,16 @@ cfgp checkout
 # set the UntrackedFiles flag
 cfgp config --local status.showUntrackedFiles no
 
+# set upstream
+cfgp push --set-upstream origin master
+
 # make sure we're in ~
 cd
 
-# set upstream
-cfgp push --set-upstream origin master
+# clone the password store
+git clone https://github.com/aleksozolins/.password-store.git
+
+# initialize pass
+pass init
 
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
