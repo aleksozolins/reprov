@@ -1,11 +1,15 @@
 #!/bin/sh
-echo "This script will set up your public and private git bare repositories and prepare your computer for the reprov scrips."
-echo "Make sure to run as user and to delete any files in ~ that will conflict (such as .bashrc)"
+echo "This script will set up your public and private git repositories, populate your home directory, and prepare your computer for the reprov scripts."
+echo "Make sure to run as user"
 
 read -p "Press Enter to begin..."
 
 # make sure we're in ~
 cd
+
+# delete files that will interfere with our git repositories
+[ -f ~/.bashrc ] && rm ~/.bashrc
+[ -f ~/.bash_profile ] && rm ~/.bash_profile
 
 # configure the cfg alias
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
