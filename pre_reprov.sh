@@ -28,7 +28,7 @@ cfg config --local status.showUntrackedFiles no
 # make sure we're in ~
 cd
 
-# configure the cfg alias
+# configure the cfgp alias
 alias cfgp='/usr/bin/git --git-dir=$HOME/.cfgp/ --work-tree=$HOME'
 
 # eliminate recursion problems
