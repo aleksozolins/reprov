@@ -59,6 +59,6 @@ cd
 git clone https://github.com/aleksozolins/.password-store.git
 
 # initialize pass
-pass init
+pass init aleksozolins
 
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
