@@ -28,6 +28,9 @@ cfg config --local status.showUntrackedFiles no
 # make sure we're in ~
 cd
 
+# set upstream
+cfg push --set-upstream origin master
+
 # configure the cfgp alias
 alias cfgp='/usr/bin/git --git-dir=$HOME/.cfgp/ --work-tree=$HOME'
 
@@ -46,3 +49,10 @@ cfgp checkout
 # set the UntrackedFiles flag
 cfgp config --local status.showUntrackedFiles no
 
+# make sure we're in ~
+cd
+
+# set upstream
+cfgp push --set-upstream origin master
+
+echo "If there were no errors, you should now have a home directory full of dotfiles!"
