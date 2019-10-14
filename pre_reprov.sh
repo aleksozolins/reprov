@@ -50,6 +50,9 @@ alias cfgp='/usr/bin/git --git-dir=$HOME/.cfgp/ --work-tree=$HOME'
 # checkout
 cfgp checkout
 
+# fix permissions on ~/.gnupg
+chmod -R go-rwx ~/.gnupg
+
 # set the UntrackedFiles flag
 cfgp config --local status.showUntrackedFiles no
 
