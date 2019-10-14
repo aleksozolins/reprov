@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "This script will set up your public and private git repositories, populate your home directory, and prepare your computer for the reprov scripts."
-echo "Make sure to run as user"
+echo "Make sure to run as user and be careful typing your username and password..."
 
 read -p "Press Enter to begin..."
 
