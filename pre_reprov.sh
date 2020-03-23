@@ -17,8 +17,8 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # eliminate recursion problems
 echo ".cfg" >> .gitignore
 
-# enable git credential cacheing for 2 minutes
-git config --global credential.helper 'cache --timeout 120'
+# enable git credential cacheing for 2 minutes (for some reason this doesn't work)
+# git config --global credential.helper 'cache --timeout 120'
 
 # clone the repo
 git clone --bare https://github.com/aleksozolins/dotfiles.git $HOME/.cfg
