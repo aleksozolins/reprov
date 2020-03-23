@@ -1,0 +1,248 @@
+#!/bin/sh
+clear
+echo "This script will set up your public and private git repositories, populate your home directory with dotfiles, and configure various programs."
+echo "It should be run from ~/repos/reprov."
+echo "Make sure to run as user with sudo privileges and be accurate typing your credentials. You will need to type your git and GPG passphrase multiple times."
+
+read -p "Press Enter to begin..."
+
+# make sure we're in ~
+cd
+
+# delete files that will interfere with our git repositories
+[ -f ~/.bashrc ] && rm ~/.bashrc
+[ -f ~/.bash_profile ] && rm ~/.bash_profile
+
+# configure the cfg alias
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# eliminate recursion problems
+echo ".cfg" >> .gitignore
+
+# clone the repo
+git clone --bare https://github.com/aleksozolins/dotfiles.git $HOME/.cfg
+
+# again configure the alias (might be redundant)
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# checkout
+cfg checkout
+
+# set the UntrackedFiles flag
+cfg config --local status.showUntrackedFiles no
+
+# make sure we're in ~
+cd
+
+# set upstream
+cfg push --set-upstream origin master
+
+# configure the cfgp alias
+alias cfgp='/usr/bin/git --git-dir=$HOME/.cfgp/ --work-tree=$HOME'
+
+# eliminate recursion problems
+echo ".cfgp" >> .gitignore
+
+# clone the repo
+git clone --bare https://github.com/aleksozolins/dotfiles_private.git $HOME/.cfgp
+
+# again configure the alias (might be redundant)
+alias cfgp='/usr/bin/git --git-dir=$HOME/.cfgp/ --work-tree=$HOME'
+
+# checkout
+cfgp checkout
+
+# set the UntrackedFiles flag
+cfgp config --local status.showUntrackedFiles no
+
+# set upstream
+cfgp push --set-upstream origin master
+
+# fix permissions on ~/.gnupg
+chmod -R go-rwx ~/.gnupg
+
+# make sure we're in ~
+cd
+
+# clone the password store
+git clone https://github.com/aleksozolins/.password-store.git
+
+echo "If there were no errors, you should now have a home directory full of dotfiles!"
+
+# ask about trim support?
+echo "Would you like to enable trim support for SSDs? yes or no ?"
+read trim
+
+# ask about st
+echo "Would you like to install Luke Smith's build of st? NOTE: You may have to adjust the config.h file afterwords and reinstall. yes or no?"
+read te
+
+# ask about cron jobs
+echo "Would you like to enable the cronie service for cron jobs? yes or no?"
+read cronie
+
+# ask about creating the maildirs
+echo "Would you like to create the top level mail directories in ~/.local/share/mail/? yes or no ?"
+read maildirs
+
+# ask about syncing mail accounts.
+echo "Would you like to synchronize all your mail accounts? yes or no ?"
+read mailsync
+
+# ask about touchpad/trackpoint
+echo "Is this a Thinkpad with a trackpoint? Do you need xf86-input-synaptics? yes or no?"
+read synaptics
+
+# ask about throttling fix for x1
+echo "Is this your Thinkpad Carbon X1? Do you need to install and enable the throttling fix?? yes or no?"
+read throttled
+
+# ask about broadcom-wl
+echo "Do you need broadcom wireless, maybe for the X61? yes or no?"
+read broadcom
+
+# ask about Nvidia
+echo "Do you need that evil Nvidia driver? yes or no?"
+read nvidia
+
+sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
+
+# does ~/repos exist?
+if [ ! -d ~/repos ]
+  then
+  mkdir ~/repos
+  else
+  echo "~/repos already exists!"
+fi
+
+# emable trim support if yes
+if [[ $trim == y* ]]
+  then
+  sudo systemctl enable fstrim.timer
+  else
+  echo "moving on..."
+fi
+
+# install a terminal emulator if yes
+if [[ $te == y* ]]
+  then
+  cd ~/repos && git clone https://github.com/LukeSmithxyz/st.git && cd ~/repos/st && sudo make install 
+  else
+  echo "OK, but don't blame me when you can't get a prompt..."
+fi
+
+# enable cronie for cron jobs if yes
+if [[ $cronie == y* ]]
+  then
+  sudo systemctl enable --now cronie 
+  else
+  echo "Whatever that's fine..."
+fi
+
+# recreate the top level mail directories if yes
+if [[ $maildirs == y* ]]
+  then
+  mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins && mkdir ~/.local/share/mail/icloud && mkdir ~/.local/share/mail/thingsforsale
+  else
+  echo "That's fine we'll just move on then..."
+fi
+
+# install synaptics if yes
+if [[ $synaptics == y* ]]
+  then
+  sudo pacman -S --noconfirm xf86-input-synaptics
+  else
+  echo "moving on..."
+fi
+
+# install throttling fix if yes
+if [[ $throttled == y* ]]
+  then
+  sudo pacman -S --noconfirm throttled
+  sudo systemctl enable --now lenovo_fix.service
+  else
+  echo "moving on..."
+fi
+
+# install broadcom-wl if yes
+if [[ $broadcom == y* ]]
+  then
+  sudo pacman -S --noconfirm broadcom-wl
+  else
+  echo "moving on..."
+fi
+
+# install nvidia if yes
+if [[ $nvidia == y* ]]
+  then
+  sudo pacman -S --noconfirm nvidia nvidia-settings
+  else
+  echo "moving on..."
+fi
+
+# change to ~/repos
+cd ~/repos
+
+# clone into yay
+git clone https://aur.archlinux.org/yay.git
+
+# change to ~/repos/yay
+cd ~/repos/yay
+
+# install yay
+makepkg -si --noconfirm
+
+echo "yay installed!"
+
+# install programs
+yay -S --noconfirm ttf-joypixels ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git goobook-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git console-tdm
+
+# configure tdm
+tdmctl init
+[ -f /usr/bin/i3 ] && tdmctl add i3 /usr/bin/i3 X
+[ -f /usr/local/bin/dwm ] && add dwm /usr/local/bin/dwm X
+
+# import your GPG keys
+gpg --import ~/.gpg/aleks_ozolins_public_gpg_key.txt
+gpg --import ~/.gpg/aleks_ozolins_private_gpg_key.asc
+
+# initialize the password store
+pass init aleksozolins
+
+# make changes to /etc/pam.d/system-local-login as root
+echo "auth      optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-local-login
+echo "session   optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-local-login
+
+# enable music player daemon as user
+systemctl enable --user mpd.service
+
+# append ips to /etc/hosts
+cat ~/repos/reprov/ips | sudo tee -a /etc/hosts
+
+# install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# mbsync all accounts if yes
+if [[ $mailsync == y* ]]
+  then
+  mbsync -a
+  else
+  echo "moving on..."
+fi
+
+# enable cron job for mutt wizard
+mw cron
+
+echo "If you didn't see any errors, you should be all set!!!"
+echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
+echo "Some things you might want to do now:" >> ~/reprov_todo.txt
+echo "-Login to your Dropbox" >> ~/reprov_todo.txt 
+echo "-Configure intel-ucode for microcode" >> ~/reprov_todo.txt 
+echo "-Configure powertop.service" >> ~/reprov_todo.txt
+echo "-Configure Thunderbird email" >> ~/reprov_todo.txt
+echo "-Login to Firefox" >> ~/reprov_todo.txt
+echo "-Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too." >> ~/reprov_todo.txt
+echo "-Configure your GTK Theme/fonts/cursor using lxappearance" >> ~/reprov_todo.txt
+echo "-If your console font is too small, remember to add (for example) FONT=ter-128n to /etc/vconsole.conf" >> ~/reprov_todo.txt
+echo "-Authenticate goobook" >> ~/reprov_todo.txt
+echo "-Run :PluginInstall from within vim" >> ~/reprov_todo.txt
