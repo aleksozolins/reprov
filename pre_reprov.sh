@@ -66,3 +66,6 @@ cd
 git clone https://github.com/aleksozolins/.password-store.git
 
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
+
+# run reprov script
+. ~/.local/bin/reprov/reprov_new.sh
