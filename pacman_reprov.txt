@@ -16,6 +16,7 @@ xss-lock
 dmenu
 xorg-xrdb
 ttf-inconsolata
+ttf-liberation
 ttf-linux-libertine
 terminus-font
 git
