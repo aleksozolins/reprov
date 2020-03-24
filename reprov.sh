@@ -1,7 +1,7 @@
 #!/bin/sh
 clear
 echo "This script will set up your public and private git repositories, populate your home directory with dotfiles, and configure various programs."
-echo "It should be run from ~/repos/reprov."
+echo "It should be run from ~/repos/reprov"
 echo "Make sure to run as user with sudo privileges and be accurate typing your credentials. You will need to type your git and GPG passphrase multiple times."
 
 read -p "Press Enter to begin..."
@@ -115,7 +115,7 @@ if [ ! -d ~/repos ]
   echo "~/repos already exists!"
 fi
 
-# emable trim support if yes
+# enable trim support if yes
 if [[ $trim == y* ]]
   then
   sudo systemctl enable fstrim.timer
