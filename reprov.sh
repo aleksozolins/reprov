@@ -248,6 +248,7 @@ mw cron
 
 echo "If you didn't see any errors, you should be all set!!!"
 echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
+echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
 echo "-Login to your Dropbox" >> ~/reprov_todo.txt 
 echo "-Configure intel-ucode for microcode" >> ~/reprov_todo.txt 
