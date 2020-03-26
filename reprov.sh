@@ -218,8 +218,8 @@ tdmctl init
 [ -f /usr/local/bin/dwm ] && add dwm /usr/local/bin/dwm X
 
 # import your GPG keys
-gpg --import ~/.gpg/aleks_ozolins_public_gpg_key.txt
-gpg --import ~/.gpg/aleks_ozolins_private_gpg_key.asc
+gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
+gpg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
 
 # initialize the password store
 pass init aleksozolins
