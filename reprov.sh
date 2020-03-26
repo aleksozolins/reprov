@@ -61,11 +61,8 @@ cfgp push --set-upstream origin master
 # fix permissions on ~/.gnupg
 chmod -R go-rwx ~/.gnupg
 
-# make sure we're in ~
-cd
-
 # clone the password store
-git clone https://github.com/aleksozolins/.password-store.git
+git clone https://github.com/aleksozolins/password-store.git ~/.local/share/password-store/
 
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
 
@@ -221,7 +218,8 @@ tdmctl init
 gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
 gpg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
 
-# initialize the password store
+# change the default directory and initialize the password store
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 pass init aleksozolins
 
 # make changes to /etc/pam.d/system-local-login as root
