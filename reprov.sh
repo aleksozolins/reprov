@@ -89,6 +89,10 @@ read maildirs
 echo "Would you like to synchronize all your mail accounts? yes or no ?"
 read mailsync
 
+# ask about printer support
+echo "Would you like to install/enable printer/network printing support? yes or no ?"
+read printer
+
 # ask about touchpad/trackpoint
 echo "Is this a Thinkpad with a trackpoint? Do you need xf86-input-synaptics? yes or no?"
 read synaptics
@@ -145,6 +149,17 @@ if [[ $maildirs == y* ]]
   mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins && mkdir ~/.local/share/mail/icloud && mkdir ~/.local/share/mail/thingsforsale
   else
   echo "That's fine we'll just move on then..."
+fi
+
+# install printer support if yes
+if [[ $printer == y* ]]
+  then
+  sudo pacman -S --no-confirm cups system-config-printer ghostscript avahi nss-mdns
+  sed '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf | sudo tee /etc/nsswitch.conf
+  sudo systemctl enable --now avahi-daemon.service
+  sudo systemctl enable --now org.cups.cupsd.service
+  else
+  echo "Onward!!!"
 fi
 
 # install synaptics if yes
