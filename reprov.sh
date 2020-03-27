@@ -13,7 +13,7 @@ cd
 [ -f ~/.bashrc ] && rm ~/.bashrc
 [ -f ~/.bash_profile ] && rm ~/.bash_profile
 
-# configure the cfg alias
+# configure the cfg alias in the current shell scope
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # eliminate recursion problems
@@ -22,22 +22,19 @@ echo ".cfg" >> .gitignore
 # clone the repo
 git clone --bare https://github.com/aleksozolins/dotfiles.git $HOME/.cfg
 
-# again configure the alias (might be redundant)
-alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
 # checkout
 cfg checkout
 
 # set the UntrackedFiles flag
 cfg config --local status.showUntrackedFiles no
 
-# make sure we're in ~
-cd
-
 # set upstream
 cfg push --set-upstream origin master
 
-# configure the cfgp alias
+# make sure we're in ~
+cd
+
+# configure the cfgp alias in the current shell scope
 alias cfgp='/usr/bin/git --git-dir=$HOME/.cfgp/ --work-tree=$HOME'
 
 # eliminate recursion problems
@@ -45,9 +42,6 @@ echo ".cfgp" >> .gitignore
 
 # clone the repo
 git clone --bare https://github.com/aleksozolins/dotfiles_private.git $HOME/.cfgp
-
-# again configure the alias (might be redundant)
-alias cfgp='/usr/bin/git --git-dir=$HOME/.cfgp/ --work-tree=$HOME'
 
 # checkout
 cfgp checkout
@@ -173,7 +167,7 @@ if [[ $throttled == y* ]]
   sudo pacman -S --noconfirm throttled
   sudo systemctl enable --now lenovo_fix.service
   else
-  echo "moving on..."
+  echo "alrighty..."
 fi
 
 # install broadcom-wl if yes
@@ -181,7 +175,7 @@ if [[ $broadcom == y* ]]
   then
   sudo pacman -S --noconfirm broadcom-wl
   else
-  echo "moving on..."
+  echo "let's keep going..."
 fi
 
 # install nvidia if yes
@@ -189,7 +183,7 @@ if [[ $nvidia == y* ]]
   then
   sudo pacman -S --noconfirm nvidia nvidia-settings
   else
-  echo "moving on..."
+  echo "um ok..."
 fi
 
 # change to ~/repos
@@ -218,7 +212,7 @@ tdmctl init
 gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
 gpg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
 
-# change the default directory and initialize the password store
+# define the alternate pass directory and initialize the password store
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store/"
 pass init aleksozolins
 
@@ -240,7 +234,7 @@ if [[ $mailsync == y* ]]
   then
   mbsync -a
   else
-  echo "moving on..."
+  echo "no mail for you!"
 fi
 
 # enable cron job for mutt wizard
