@@ -246,6 +246,9 @@ fi
 # enable cron job for mutt wizard
 mw cron
 
+# lets end up in ~
+cd
+
 echo "If you didn't see any errors, you should be all set!!!"
 echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
 echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
