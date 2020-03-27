@@ -58,6 +58,10 @@ chmod -R go-rwx ~/.gnupg
 # clone the password store
 git clone https://github.com/aleksozolins/password-store.git ~/.local/share/password-store/
 
+# create some necessary directories
+mkdir $HOME/Desktop/
+mkdir $HOME/.config/gtk-2.0
+
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
 
 # ask about trim support?
