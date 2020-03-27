@@ -149,7 +149,7 @@ fi
 # install printer support if yes
 if [[ $printer == y* ]]
   then
-  sudo pacman -S --no-confirm cups system-config-printer ghostscript avahi nss-mdns
+  sudo pacman -S --noconfirm cups system-config-printer ghostscript avahi nss-mdns
   sed '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf | sudo tee /etc/nsswitch.conf
   sudo systemctl enable --now avahi-daemon.service
   sudo systemctl enable --now org.cups.cupsd.service
