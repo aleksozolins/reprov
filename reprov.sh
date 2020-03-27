@@ -219,7 +219,7 @@ gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
 gpg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
 
 # change the default directory and initialize the password store
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export PASSWORD_STORE_DIR="~/.local/share/password-store/"
 pass init aleksozolins
 
 # make changes to /etc/pam.d/system-local-login as root
