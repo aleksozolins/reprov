@@ -205,7 +205,7 @@ makepkg -si --noconfirm
 echo "yay installed!"
 
 # install programs
-yay -S --noconfirm ttf-joypixels ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git goobook-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git console-tdm
+yay -S --noconfirm --removemake ttf-joypixels ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git goobook-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git console-tdm
 
 # configure tdm
 tdmctl init
