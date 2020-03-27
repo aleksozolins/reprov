@@ -150,7 +150,7 @@ fi
 if [[ $printer == y* ]]
   then
   sudo pacman -S --noconfirm cups system-config-printer ghostscript avahi nss-mdns
-  sed -i '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf | sudo tee /etc/nsswitch.conf
+  sudo sed -i '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf
   sudo systemctl enable --now avahi-daemon.service
   sudo systemctl enable --now org.cups.cupsd.service
   else
