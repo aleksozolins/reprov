@@ -141,7 +141,7 @@ fi
 # recreate the top level mail directories if yes
 if [[ $maildirs == y* ]]
   then
-  mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins && mkdir ~/.local/share/mail/icloud && mkdir ~/.local/share/mail/thingsforsale
+  mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins && mkdir ~/.local/share/mail/icloud
   else
   echo "That's fine we'll just move on then..."
 fi
@@ -150,7 +150,7 @@ fi
 if [[ $printer == y* ]]
   then
   sudo pacman -S --noconfirm cups system-config-printer ghostscript avahi nss-mdns
-  sed '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf | sudo tee /etc/nsswitch.conf
+  sed -i '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf | sudo tee /etc/nsswitch.conf
   sudo systemctl enable --now avahi-daemon.service
   sudo systemctl enable --now org.cups.cupsd.service
   else
