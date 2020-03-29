@@ -191,6 +191,9 @@ if [[ $nvidia == y* ]]
   echo "um ok..."
 fi
 
+# enable xdg-user-dirs-update.service to deal with our custom names
+sudo systemctl enable --now xdg-user-dirs-update.service
+
 # change to ~/repos
 cd ~/repos
 
