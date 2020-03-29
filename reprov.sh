@@ -192,9 +192,6 @@ if [[ $nvidia == y* ]]
   echo "um ok..."
 fi
 
-# enable xdg-user-dirs-update.service to deal with our custom names
-sudo systemctl enable --now xdg-user-dirs-update.service
-
 # change to ~/repos
 cd ~/repos
 
@@ -256,7 +253,7 @@ echo "If you didn't see any errors, you should be all set!!!"
 echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
 echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
-echo "-Login to your Dropbox" >> ~/reprov_todo.txt 
+echo "-Login to your Dropbox and create symlinks for ALL xdg directories" >> ~/reprov_todo.txt 
 echo "-Configure intel-ucode for microcode" >> ~/reprov_todo.txt 
 echo "-Configure powertop.service" >> ~/reprov_todo.txt
 echo "-Configure Thunderbird email" >> ~/reprov_todo.txt
