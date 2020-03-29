@@ -59,7 +59,8 @@ chmod -R go-rwx ~/.gnupg
 git clone https://github.com/aleksozolins/password-store.git ~/.local/share/password-store/
 
 # create some necessary directories
-mkdir $HOME/Desktop/
+mkdir $HOME/desk/
+mkdir $HOME/dls/
 mkdir $HOME/.config/gtk-2.0
 
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
