@@ -62,6 +62,10 @@ git clone https://github.com/aleksozolins/password-store.git ~/.local/share/pass
 mkdir $HOME/desk/
 mkdir $HOME/dls/
 mkdir $HOME/local/
+ln -s $HOME/Dropbox/xdg/docs/ $HOME
+ln -s $HOME/Dropbox/xdg/pics/ $HOME
+ln -s $HOME/Dropbox/xdg/vids/ $HOME
+ln -s $HOME/Dropbox/xdg/mus/ $HOME
 mkdir $HOME/.config/gtk-2.0
 
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
@@ -253,7 +257,7 @@ echo "If you didn't see any errors, you should be all set!!!"
 echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
 echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
-echo "-Login to your Dropbox and create symlinks for ALL xdg directories" >> ~/reprov_todo.txt 
+echo "-Login to your Dropbox and sync ALL xdg directories" >> ~/reprov_todo.txt 
 echo "-Configure intel-ucode for microcode" >> ~/reprov_todo.txt 
 echo "-Configure powertop.service" >> ~/reprov_todo.txt
 echo "-Configure Thunderbird email" >> ~/reprov_todo.txt
