@@ -237,7 +237,7 @@ systemctl enable --user mpd.service
 cat ~/repos/reprov/ips | sudo tee -a /etc/hosts
 
 # install vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
 # mbsync all accounts if yes
 if [[ $mailsync == y* ]]
