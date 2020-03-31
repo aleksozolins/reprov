@@ -42,7 +42,7 @@ youtube-dl
 youtube-viewer
 gst-libav
 gst-plugins-ugly
-vim
+nvim
 feh
 grub
 efibootmgr
