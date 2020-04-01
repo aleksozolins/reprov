@@ -211,7 +211,7 @@ makepkg -si --noconfirm
 echo "yay installed!"
 
 # install programs
-yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git goobook-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git console-tdm j4-dmenu-desktop
+yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git console-tdm j4-dmenu-desktop
 
 # configure tdm
 tdmctl init
@@ -265,5 +265,4 @@ echo "-Login to Firefox" >> ~/reprov_todo.txt
 echo "-Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/" >> ~/reprov_todo.txt
 echo "-Configure your GTK Theme/fonts/cursor using lxappearance" >> ~/reprov_todo.txt
 echo "-If your console font is too small, remember to add (for example) FONT=ter-128n to /etc/vconsole.conf" >> ~/reprov_todo.txt
-echo "-Authenticate goobook" >> ~/reprov_todo.txt
 echo "-Run :PluginInstall from within vim" >> ~/reprov_todo.txt
