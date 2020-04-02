@@ -211,7 +211,7 @@ makepkg -si --noconfirm
 echo "yay installed!"
 
 # install programs
-yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git console-tdm j4-dmenu-desktop
+yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git j4-dmenu-desktop
 
 # change to ~/repos
 cd ~/repos
@@ -236,11 +236,6 @@ cd ~/repos/dwmblocks_apo
 
 # install dwmblocks
 sudo make install
-
-# configure tdm
-tdmctl init
-[ -f /usr/bin/i3 ] && tdmctl add i3 /usr/bin/i3 X
-[ -f /usr/local/bin/dwm ] && tdmctl add dwm /usr/local/bin/dwm X
 
 # import your GPG keys
 gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
