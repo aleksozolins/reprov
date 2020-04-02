@@ -240,7 +240,7 @@ sudo make install
 # configure tdm
 tdmctl init
 [ -f /usr/bin/i3 ] && tdmctl add i3 /usr/bin/i3 X
-[ -f /usr/local/bin/dwm ] && add dwm /usr/local/bin/dwm X
+[ -f /usr/local/bin/dwm ] && tdmctl add dwm /usr/local/bin/dwm X
 
 # import your GPG keys
 gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
