@@ -213,6 +213,30 @@ echo "yay installed!"
 # install programs
 yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli mutt-wizard-git pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git console-tdm j4-dmenu-desktop
 
+# change to ~/repos
+cd ~/repos
+
+# clone into dwm
+git clone https://github.com/aleksozolins/dwm62c.git
+
+# change to ~/repos/dwm62c
+cd ~/repos/dwm62c
+
+# install dwm
+sudo make install
+
+# change to ~/repos
+cd ~/repos
+
+# clone into dwmblocks_apo
+git clone https://github.com/aleksozolins/dwmblocks_apo.git
+
+# change to ~/repos/dwmblocks_apo
+cd ~/repos/dwmblocks_apo
+
+# install dwmblocks
+sudo make install
+
 # configure tdm
 tdmctl init
 [ -f /usr/bin/i3 ] && tdmctl add i3 /usr/bin/i3 X

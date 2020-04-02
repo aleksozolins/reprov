@@ -9,8 +9,6 @@ xorg-xinit
 usbutils
 mc
 sxhkd
-i3-gaps
-i3status
 i3lock
 xss-lock
 dmenu
