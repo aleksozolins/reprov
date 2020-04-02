@@ -20,6 +20,7 @@ ttf-liberation
 ttf-linux-libertine
 terminus-font
 git
+trayer-srg
 alsa-utils
 pulseaudio
 pulseaudio-bluetooth
