@@ -9,7 +9,7 @@ xorg-xinit
 usbutils
 mc
 sxhkd
-i3lock
+slock
 xss-lock
 dmenu
 xorg-xrdb
