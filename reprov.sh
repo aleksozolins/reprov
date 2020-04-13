@@ -269,6 +269,9 @@ fi
 # enable cron job for mutt wizard
 mw cron
 
+# rebuild the grub config with microcode
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
 # lets end up in ~
 cd
 
@@ -277,11 +280,10 @@ echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
 echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
 echo "-Login to your Dropbox and sync ALL xdg directories" >> ~/reprov_todo.txt 
-echo "-Configure intel-ucode for microcode" >> ~/reprov_todo.txt 
 echo "-Configure powertop.service" >> ~/reprov_todo.txt
 echo "-Configure Thunderbird email" >> ~/reprov_todo.txt
 echo "-Login to Firefox" >> ~/reprov_todo.txt
 echo "-Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/" >> ~/reprov_todo.txt
-echo "-Configure your GTK Theme/fonts/cursor using lxappearance" >> ~/reprov_todo.txt
+echo "-Configure your GTK theme/fonts/cursor using lxappearance" >> ~/reprov_todo.txt
 echo "-If your console font is too small, remember to add (for example) FONT=ter-128n to /etc/vconsole.conf" >> ~/reprov_todo.txt
 echo "-Run :PluginInstall from within vim" >> ~/reprov_todo.txt
