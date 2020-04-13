@@ -281,8 +281,8 @@ fi
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # modify /etc/bash.bashrc so that non-login shells will source the custom bashrc location
-echo "if [ -s "${XDG_CONFIG_HOME:-$HOME/.config}/bash/bashrc" ]; then" | sudo tee -a /etc/bash.bashrc
-echo "   . "${XDG_CONFIG_HOME:-$HOME/.config}/bash/bashrc"" | sudo tee -a /etc/bash.bashrc
+echo "if [ -s "${XDG_CONFIG_HOME:-$HOME/.config}/bashrc" ]; then" | sudo tee -a /etc/bash.bashrc
+echo "   . "${XDG_CONFIG_HOME:-$HOME/.config}/bashrc"" | sudo tee -a /etc/bash.bashrc
 echo "fi" | sudo tee -a /etc/bash.bashrc
 
 # lets end up in ~
