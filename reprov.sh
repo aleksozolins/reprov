@@ -260,7 +260,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vund
 # mbsync all accounts if yes
 if [[ $mailsync == y* ]]
   then
-  mbsync -a
+  mbsync -c ~/.config/mbsyncrc -a
   else
   echo "no mail for you!"
 fi
