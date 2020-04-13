@@ -61,7 +61,6 @@ git clone https://github.com/aleksozolins/password-store.git ~/.local/share/pass
 # create some necessary directories
 mkdir $HOME/desk/
 mkdir $HOME/dls/
-mkdir $HOME/local/
 ln -s $HOME/Dropbox/xdg/docs/ $HOME
 ln -s $HOME/Dropbox/xdg/pics/ $HOME
 ln -s $HOME/Dropbox/xdg/vids/ $HOME
