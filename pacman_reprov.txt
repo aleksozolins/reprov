@@ -53,6 +53,8 @@ intel-ucode
 openssh
 picom
 neomutt
+msmtp
+isync
 cronie
 libnotify
 unclutter
