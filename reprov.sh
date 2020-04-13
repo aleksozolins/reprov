@@ -265,8 +265,16 @@ if [[ $mailsync == y* ]]
   echo "no mail for you!"
 fi
 
-# enable cron job for mutt wizard
-mw cron
+# if cronie enabled, ask about mailsync cronjob
+if [[ $cronie == y* ]]
+  then
+  echo "How many minutes between mailsyncs?"
+  read mailmin
+  (crontab -l; echo "*/$mailmin * * * * export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus; export DISPLAY=:0; . \$HOME/.profile; $(type mailsync | cut -d' ' -f3)") | crontab -
+  echo "mailsync cron job enabled"
+  else
+  echo "cronie is not enabled"
+fi
 
 # rebuild the grub config with microcode
 sudo grub-mkconfig -o /boot/grub/grub.cfg
