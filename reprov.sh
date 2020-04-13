@@ -12,6 +12,7 @@ cd
 # delete files that will interfere with our git repositories
 [ -f ~/.bashrc ] && rm ~/.bashrc
 [ -f ~/.bash_profile ] && rm ~/.bash_profile
+[ -f ~/.bashrc ] && rm ~/.bashrc
 
 # configure the cfg alias in the current shell scope
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -278,6 +279,11 @@ fi
 
 # rebuild the grub config with microcode
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# modify /etc/bash.bashrc so that non-login shells will source the custom bashrc location
+echo "if [ -s "${XDG_CONFIG_HOME:-$HOME/.config}/bash/bashrc" ]; then" | sudo tee -a /etc/bash.bashrc
+echo "   . "${XDG_CONFIG_HOME:-$HOME/.config}/bash/bashrc"" | sudo tee -a /etc/bash.bashrc
+echo "fi" | sudo tee -a /etc/bash.bashrc
 
 # lets end up in ~
 cd
