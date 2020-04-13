@@ -53,6 +53,7 @@ intel-ucode
 openssh
 picom
 neomutt
+pass
 msmtp
 isync
 cronie
