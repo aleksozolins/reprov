@@ -67,7 +67,6 @@ gvfs-smb
 powertop
 unrar
 p7zip
-pass
 xf86-video-intel
 newsboat
 dosbox
