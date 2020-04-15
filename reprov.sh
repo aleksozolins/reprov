@@ -293,7 +293,7 @@ echo "fi" | sudo tee -a /etc/bash.bashrc
 if [[ $dropbox == y* ]]
   then
   sudo systemctl enable dropbox@aleksozolins
-  echo "Dropbox enabled as s systemd unit."
+  echo "Dropbox enabled as a systemd unit."
   else
   echo "Zooming by...."
 fi
@@ -305,7 +305,7 @@ echo "If you didn't see any errors, you should be all set!!!"
 echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
 echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
-echo "-Login to your Dropbox and sync ALL xdg directories" >> ~/reprov_todo.txt 
+echo "-Login to your Dropbox and sync ALL xdg directories. If enabled as a systemd unit run dropbox-cli status to sync." >> ~/reprov_todo.txt 
 echo "-Configure powertop.service" >> ~/reprov_todo.txt
 echo "-Configure Thunderbird email" >> ~/reprov_todo.txt
 echo "-Login to Firefox" >> ~/reprov_todo.txt
