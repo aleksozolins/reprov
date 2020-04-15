@@ -110,6 +110,11 @@ read broadcom
 echo "Do you need that evil Nvidia driver? yes or no?"
 read nvidia
 
+# ask about Dropbox and systemd
+echo "Enable Dropbox as a systemd unit? Note, you'll not have access to the tray icon or selective sync"
+echo "For server use only... think nzxt.i yes or no"
+read Dropbox
+
 sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
 # does ~/repos exist?
@@ -284,6 +289,15 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 echo "if [ -s "${XDG_CONFIG_HOME:-$HOME/.config}/bashrc" ]; then" | sudo tee -a /etc/bash.bashrc
 echo "   . "${XDG_CONFIG_HOME:-$HOME/.config}/bashrc"" | sudo tee -a /etc/bash.bashrc
 echo "fi" | sudo tee -a /etc/bash.bashrc
+
+# enable Dropbox as a systemd unit if yes
+if [[ $dropbox == y* ]]
+  then
+  sudo systemctl enable dropbox@aleksozolins
+  echo "Dropbox enabled as s systemd unit."
+  else
+  echo "Zooming by...."
+fi
 
 # lets end up in ~
 cd
