@@ -12,7 +12,6 @@ cd
 # delete files that will interfere with our git repositories
 [ -f ~/.bashrc ] && rm ~/.bashrc
 [ -f ~/.bash_profile ] && rm ~/.bash_profile
-[ -f ~/.bashrc ] && rm ~/.bashrc
 
 # configure the cfg alias in the current shell scope
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
