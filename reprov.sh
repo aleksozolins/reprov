@@ -111,9 +111,9 @@ echo "Do you need that evil Nvidia driver? yes or no?"
 read nvidia
 
 # ask about Dropbox and systemd
-echo "Enable Dropbox as a systemd unit? Note, you'll not have access to the tray icon or selective sync"
-echo "For server use only... think nzxt.i yes or no"
-read Dropbox
+echo "Enable Dropbox as a systemd unit? Note, you'll not have access to the tray icon or selective sync."
+echo "For server use only... think nzxt. yes or no?"
+read dropbox
 
 sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
