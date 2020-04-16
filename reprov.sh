@@ -67,6 +67,9 @@ ln -s $HOME/Dropbox/xdg/vids/ $HOME
 ln -s $HOME/Dropbox/xdg/mus/ $HOME
 mkdir $HOME/.config/gtk-2.0
 
+#create .dropbox-dist directory as read-only to prevent automatic update startup problem
+install -dm0 $HOME/.dropbox-dist
+
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
 
 # ask about trim support?
