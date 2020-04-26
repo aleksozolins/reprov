@@ -245,9 +245,8 @@ cd ~/repos/dwmblocks_apo
 sudo make install
 
 # import your GPG keys
-export GNUPGHOME=~/.local/share/gnupg
-gpg --homedir ~/.local/share/gnupg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
-gpg --homedir ~/.local/share/gnupg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
+gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
+gpg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
 
 # define the alternate pass directory and initialize the password store
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store/"
