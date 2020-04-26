@@ -65,7 +65,8 @@ ln -s $HOME/Dropbox/xdg/docs/ $HOME
 ln -s $HOME/Dropbox/xdg/pics/ $HOME
 ln -s $HOME/Dropbox/xdg/vids/ $HOME
 ln -s $HOME/Dropbox/xdg/mus/ $HOME
-mkdir $HOME/.config/gtk-2.0
+mkdir $HOME/.config/gtk-2.0/
+mkdir -p $HOME/.local/share/gnupg/
 
 #create .dropbox-dist directory as read-only to prevent automatic update startup problem
 install -dm0 $HOME/.dropbox-dist
@@ -245,8 +246,9 @@ cd ~/repos/dwmblocks_apo
 sudo make install
 
 # import your GPG keys
-gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
-gpg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
+export GNUPGHOME=~/.local/share/gnupg
+gpg --homedir ~/.local/share/gnupg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
+gpg --homedir ~/.local/share/gnupg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
 
 # define the alternate pass directory and initialize the password store
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store/"
