@@ -117,6 +117,11 @@ echo "Enable Dropbox as a systemd unit? Note, you'll not have access to the tray
 echo "For server use only... think nzxt. yes or no?"
 read dropbox
 
+# ask about passing password for remote logins
+echo "Would you like to pass your login password to GPG for remote logins? Might be good for server use"
+echo "It is passed for local logins by default. yes or no?"
+read remote
+
 sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
 # does ~/repos exist?
@@ -255,6 +260,15 @@ pass init aleksozolins
 # make changes to /etc/pam.d/system-local-login as root
 echo "auth      optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-local-login
 echo "session   optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-local-login
+
+# make changes to /etc/pam.d/system-remote-login if yes
+if [[ $remote == y* ]]
+  then
+  echo "auth      optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-remote-login
+  echo "session   optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-remote-login
+  else
+  echo "serve ya later!!!"
+fi
 
 # enable music player daemon as user
 systemctl enable --user mpd.service
