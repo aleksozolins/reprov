@@ -66,7 +66,6 @@ ln -s $HOME/Dropbox/xdg/pics/ $HOME
 ln -s $HOME/Dropbox/xdg/vids/ $HOME
 ln -s $HOME/Dropbox/xdg/mus/ $HOME
 mkdir $HOME/.config/gtk-2.0/
-mkdir -p $HOME/.local/share/gnupg/
 
 #create .dropbox-dist directory as read-only to prevent automatic update startup problem
 install -dm0 $HOME/.dropbox-dist
