@@ -26,7 +26,6 @@ pulseaudio-alsa
 pulsemixer
 bluez
 bluez-utils
-thunar
 gvfs
 lxappearance
 rsync
