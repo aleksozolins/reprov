@@ -87,3 +87,4 @@ figlet
 abook
 task
 sxiv
+ueberzug
