@@ -33,6 +33,7 @@ gparted
 fwupd
 tmux
 ranger
+thunar
 w3m
 mpv
 youtube-dl
