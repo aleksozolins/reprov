@@ -87,7 +87,6 @@ figlet
 abook
 task
 sxiv
-ueberzug
 tumbler
 thunar-media-tags-plugin
 sshfs
