@@ -58,9 +58,11 @@ chmod -R go-rwx ~/.gnupg
 # clone the password store
 git clone https://github.com/aleksozolins/password-store.git ~/.local/share/password-store/
 
-# create some necessary directories
+# create some necessary directories and change owners as necessary
 mkdir $HOME/desk/
 mkdir $HOME/dls/
+sudo mkdir /mnt/4TBext4
+sudo chown aleksozolins:aleksozolins /mnt/4TBext4
 ln -s $HOME/Dropbox/xdg/docs/ $HOME
 ln -s $HOME/Dropbox/xdg/pics/ $HOME
 ln -s $HOME/Dropbox/xdg/vids/ $HOME
