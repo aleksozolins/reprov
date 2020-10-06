@@ -15,6 +15,7 @@ xorg-xrdb
 ttf-liberation
 ttf-linux-libertine
 terminus-font
+pcmanfm-gtk3
 git
 trayer-srg
 alsa-utils
@@ -32,7 +33,6 @@ gparted
 fwupd
 vifm
 tmux
-thunar
 w3m
 mpv
 youtube-dl
@@ -87,6 +87,4 @@ figlet
 abook
 task
 sxiv
-tumbler
-thunar-media-tags-plugin
 sshfs
