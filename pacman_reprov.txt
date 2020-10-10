@@ -36,7 +36,6 @@ tmux
 w3m
 mpv
 youtube-dl
-youtube-viewer
 gst-libav
 gst-plugins-ugly
 neovim
