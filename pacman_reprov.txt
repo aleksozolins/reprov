@@ -42,7 +42,8 @@ neovim
 feh
 grub
 efibootmgr
-mupdf
+zathura
+zathura-pdf-mupdf
 firefox
 thunderbird
 arandr
