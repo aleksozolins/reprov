@@ -88,3 +88,5 @@ abook
 task
 sxiv
 sshfs
+tty-solitaire
+gnuchess
