@@ -79,7 +79,7 @@ rtv
 unzip
 signal-desktop
 calibre
-scrot
+flameshot
 qutebrowser
 ntfs-3g
 dialog
