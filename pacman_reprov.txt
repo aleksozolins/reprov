@@ -17,7 +17,7 @@ ttf-linux-libertine
 terminus-font
 pcmanfm-gtk3
 git
-trayer-srg
+stalonetray
 alsa-utils
 pulseaudio
 pulseaudio-bluetooth
