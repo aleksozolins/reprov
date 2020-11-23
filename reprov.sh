@@ -119,6 +119,10 @@ echo "Enable Dropbox as a systemd unit? Note, you'll not have access to the tray
 echo "For server use only... think nzxt. yes or no?"
 read dropbox
 
+# ask about work programs
+echo "Do you want to install programs for work (Chrome, Zoom, Slack)? yes or no?"
+read work
+
 sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
 # does ~/repos exist?
@@ -221,6 +225,14 @@ echo "yay installed!"
 
 # install programs
 yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git j4-dmenu-desktop straw-viewer-git
+
+# install work programs if yes
+if [[ $work == y* ]]
+  then
+yay -S --noconfirm --removemake google-chrome zoom slack
+  else
+  echo "guess you don't need any money..."
+fi
 
 # change to ~/repos
 cd ~/repos
