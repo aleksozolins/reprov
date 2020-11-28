@@ -59,15 +59,14 @@ chmod -R go-rwx ~/.gnupg
 git clone https://github.com/aleksozolins/password-store.git ~/.local/share/password-store/
 
 # create some necessary directories and change owners as necessary
-mkdir $HOME/desk/
 mkdir $HOME/dls/
 sudo mkdir /mnt/4TBext4
 sudo chown aleksozolins:aleksozolins /mnt/4TBext4
+ln -s $HOME/Dropbox/xdg/desk/ $HOME
 ln -s $HOME/Dropbox/xdg/docs/ $HOME
 ln -s $HOME/Dropbox/xdg/pics/ $HOME
 ln -s $HOME/Dropbox/xdg/vids/ $HOME
 ln -s $HOME/Dropbox/xdg/mus/ $HOME
-mkdir $HOME/.config/gtk-2.0/
 
 #create .dropbox-dist directory as read-only to prevent automatic update startup problem
 install -dm0 $HOME/.dropbox-dist
