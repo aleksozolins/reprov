@@ -324,9 +324,8 @@ echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET C
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
 echo "-Login to your Dropbox and sync ALL xdg directories. If enabled as a systemd unit run dropbox-cli status to sync." >> ~/reprov_todo.txt 
 echo "-Configure powertop.service" >> ~/reprov_todo.txt
-echo "-Configure Thunderbird email" >> ~/reprov_todo.txt
 echo "-Login to Firefox" >> ~/reprov_todo.txt
 echo "-Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/" >> ~/reprov_todo.txt
-echo "-Configure your GTK theme/fonts/cursor using lxappearance" >> ~/reprov_todo.txt
+echo "-If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option quotePreferredModequote quote1400x1050quote) or whatever resi to the Monitor secion of xorg.conf" >> ~/reprov_todo.txt
 echo "-If your console font is too small, remember to add (for example) FONT=ter-128n to /etc/vconsole.conf" >> ~/reprov_todo.txt
 echo "-Run :PluginInstall from within vim" >> ~/reprov_todo.txt
