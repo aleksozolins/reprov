@@ -80,7 +80,6 @@ unzip
 signal-desktop
 calibre
 flameshot
-qutebrowser
 ntfs-3g
 dialog
 figlet

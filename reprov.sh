@@ -223,7 +223,7 @@ makepkg -si --noconfirm
 echo "yay installed!"
 
 # install programs
-yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git j4-dmenu-desktop straw-viewer-git
+yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git j4-dmenu-desktop straw-viewer-git brave-bin
 
 # install work programs if yes
 if [[ $work == y* ]]
