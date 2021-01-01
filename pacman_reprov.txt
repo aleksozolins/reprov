@@ -10,7 +10,6 @@ usbutils
 sxhkd
 slock
 xss-lock
-dmenu
 xorg-xrdb
 ttf-liberation
 ttf-linux-libertine

@@ -245,6 +245,9 @@ cd ~/repos/dmenu
 # install dmenu
 sudo make install
 
+# delete install files
+rm -f dmenu.o config.h dmenu
+
 # change to ~/repos
 cd ~/repos
 
@@ -256,6 +259,9 @@ cd ~/repos/dwm62c
 
 # install dwm
 sudo make install
+
+# delete install files
+rm -f dwm.o config.h dwm
 
 # change to ~/repos
 cd ~/repos
