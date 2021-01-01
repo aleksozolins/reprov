@@ -236,10 +236,22 @@ fi
 # change to ~/repos
 cd ~/repos
 
-# clone into dwm
-git clone https://github.com/aleksozolins/dwm62c.git
+# clone into dmenu
+git clone https://github.com/aleksozolins/dmenu.git
 
-# change to ~/repos/dwm62c
+# change to ~/repos/dmenu
+cd ~/repos/dmenu
+
+# install dmenu
+sudo make install
+
+# change to ~/repos
+cd ~/repos
+
+# clone into dwm
+git clone https://github.com/aleksozolins/dwm62c_1080.git
+
+# change to ~/repos/dwm62c_1080
 cd ~/repos/dwm62c
 
 # install dwm
