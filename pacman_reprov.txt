@@ -88,3 +88,4 @@ sxiv
 sshfs
 tty-solitaire
 gnuchess
+gnucash
