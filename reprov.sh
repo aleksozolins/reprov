@@ -60,8 +60,6 @@ git clone https://github.com/aleksozolins/password-store.git ~/.local/share/pass
 
 # create some necessary directories and change owners as necessary
 mkdir $HOME/dls/
-sudo mkdir /mnt/8TBRAID0
-sudo chown aleksozolins:aleksozolins /mnt/8TBRAID0
 ln -s $HOME/Dropbox/xdg/desk/ $HOME
 ln -s $HOME/Dropbox/xdg/docs/ $HOME
 ln -s $HOME/Dropbox/xdg/pics/ $HOME
