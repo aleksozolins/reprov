@@ -89,3 +89,4 @@ sshfs
 tty-solitaire
 gnuchess
 gnucash
+transmission-cli
