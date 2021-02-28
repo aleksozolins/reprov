@@ -39,8 +39,6 @@ gst-libav
 gst-plugins-ugly
 neovim
 feh
-grub
-efibootmgr
 zathura
 zathura-pdf-mupdf
 firefox
