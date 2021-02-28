@@ -211,19 +211,19 @@ fi
 # change to ~/repos
 cd ~/repos
 
-# clone into yay
-git clone https://aur.archlinux.org/yay.git
+# clone into paru
+git clone https://aur.archlinux.org/paru.git
 
-# change to ~/repos/yay
-cd ~/repos/yay
+# change to ~/repos/paru
+cd ~/repos/paru
 
-# install yay
+# install paru
 makepkg -si --noconfirm
 
-echo "yay installed!"
+echo "paru installed!"
 
 # install programs
-yay -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git j4-dmenu-desktop straw-viewer-git tremc
+paru -S --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme geekbench nestopia gtk-theme-arc-gruvbox-git j4-dmenu-desktop straw-viewer-git tremc
 
 # install work programs if yes
 if [[ $work == y* ]]
