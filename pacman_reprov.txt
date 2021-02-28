@@ -88,3 +88,4 @@ tty-solitaire
 gnuchess
 gnucash
 transmission-cli
+efibootmgr
