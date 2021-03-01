@@ -253,7 +253,7 @@ cd ~/repos
 git clone https://github.com/aleksozolins/dwm62c_1080.git
 
 # change to ~/repos/dwm62c_1080
-cd ~/repos/dwm62c
+cd ~/repos/dwm62c_1080
 
 # install dwm
 sudo make install
