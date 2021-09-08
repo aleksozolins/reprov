@@ -9,7 +9,6 @@ cronie
 cups
 dosbox
 dunst
-efibootmgr
 emacs
 feh
 firefox
