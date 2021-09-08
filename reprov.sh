@@ -21,6 +21,10 @@ sudo pacman -S --noconfirm stow
 cd ~/repos/dotfiles/
 stow arch dosbox dunst emacs flameshot fontconfig git gnupg gpgkeys gtk mbsync mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
 
+# create .bash_profile symlink
+cd
+ln -s ~/.profile ~/.bash_profile
+
 # fix permissions on ~/.gnupg
 chmod -R go-rwx ~/.gnupg
 
@@ -66,7 +70,7 @@ echo "For server use only... think nzxt. yes or no?"
 read dropbox
 
 # Install programs
-sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
+sudo pacman -S --noconfirm --needed - < ~/repos/reprov_new/pacman_reprov.txt
 
 # enable trim support
 sudo systemctl enable fstrim.timer
@@ -193,7 +197,7 @@ echo "session   optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-local-lo
 systemctl enable --user mpd.service
 
 # append ips to /etc/hosts
-cat ~/repos/reprov/ips | sudo tee -a /etc/hosts
+cat ~/repos/reprov_new/ips | sudo tee -a /etc/hosts
 
 # install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
