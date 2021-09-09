@@ -19,7 +19,7 @@ git clone https://github.com/aleksozolins/dotfiles_stow.git ~/.dotfiles/
 # Stow dotfiles
 sudo pacman -S --noconfirm stow
 cd ~/.dotfiles/
-stow arch dosbox dunst emacs flameshot fontconfig git gnupg gpgkeys gtk mbsync mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
+stow arch dosbox dunst emacs flameshot fontconfig git gnupg gpgkeys mbsync mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
 
 # create .bash_profile symlink
 cd
@@ -51,6 +51,10 @@ read mailsync
 # ask about intel video
 echo "Would you like to install xf86-video-intel? yes or no (will use modesetting) ?"
 read intelvid
+
+# ask about resolution
+echo "Is this a 1080p system? yes or no for 720p ?"
+read resi
 
 # ask about touchpad/trackpoint
 echo "Is this a Thinkpad with a trackpoint? Do you need xf86-input-synaptics? yes or no?"
@@ -91,35 +95,45 @@ sudo systemctl enable --now cups.service
 
 # install synaptics if yes
 if [[ $synaptics == y* ]]
-  then
-  sudo pacman -S --noconfirm xf86-input-synaptics
-  else
-  echo "moving on..."
+   then
+   sudo pacman -S --noconfirm xf86-input-synaptics
+   else
+   echo "moving on..."
 fi
 
 # install intel video driver if yes
 if [[ $intelvid == y* ]]
-  then
-  sudo pacman -S --noconfirm xf86-video-intel
-  else
-  echo "modesetting it is"  
+   then
+   sudo pacman -S --noconfirm xf86-video-intel
+   else
+   echo "modesetting it is"  
 fi
 
+# stow appropriate gtk configs
+if [[ $resi == y* ]]
+   then
+   cd ~/.dotfiles
+   stow gtk    
+   else
+   cd ~/.dotfiles
+   stow gtk_720
+fi
+   
 # install throttling fix if yes
 if [[ $throttled == y* ]]
-  then
-  sudo pacman -S --noconfirm throttled
-  sudo systemctl enable --now lenovo_fix.service
-  else
-  echo "alrighty..."
+   then
+   sudo pacman -S --noconfirm throttled
+   sudo systemctl enable --now lenovo_fix.service
+   else
+   echo "alrighty..."
 fi
 
 # install broadcom-wl if yes
 if [[ $broadcom == y* ]]
-  then
-  sudo pacman -S --noconfirm broadcom-wl
-  else
-  echo "let's keep going..."
+   then
+   sudo pacman -S --noconfirm broadcom-wl
+   else
+   echo "let's keep going..."
 fi
 
 # change to ~/repos
@@ -204,10 +218,10 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vund
 
 # mbsync all accounts if yes
 if [[ $mailsync == y* ]]
-  then
-  mbsync -c ~/.config/mbsyncrc -a
-  else
-  echo "no mail for you!"
+   then
+   mbsync -c ~/.config/mbsyncrc -a
+   else
+   echo "no mail for you!"
 fi
 
 # initialuze mu and index mails
@@ -224,11 +238,11 @@ echo "fi" | sudo tee -a /etc/bash.bashrc
 
 # enable Dropbox as a systemd unit if yes
 if [[ $dropbox == y* ]]
-  then
-  sudo systemctl enable dropbox@aleksozolins
-  echo "Dropbox enabled as a systemd unit."
-  else
-  echo "Zooming by...."
+   then
+   sudo systemctl enable dropbox@aleksozolins
+   echo "Dropbox enabled as a systemd unit."
+   else
+   echo "Zooming by...."
 fi
 
 # lets end up in ~
