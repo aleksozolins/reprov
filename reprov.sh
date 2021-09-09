@@ -153,32 +153,34 @@ echo "paru installed!"
 # install programs
 paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git tremc rtv mu
 
-# change to ~/repos
-cd ~/repos
-
-# clone into dmenu
-git clone https://github.com/aleksozolins/dmenu.git
-
-# change to ~/repos/dmenu
-cd ~/repos/dmenu
-
 # install dmenu
-sudo make install
+cd ~/repos
+if [[ $resi == y* ]]
+   then
+   git clone https://github.com/aleksozolins/dmenu.git
+   cd ~/repos/dmenu
+   sudo make install
+   else
+   git clone https://github.com/aleksozolins/dmenu_720.git
+   cd ~/repos/dmenu_720
+   sudo make install
+fi
 
 # delete install files
 rm -f dmenu.o config.h dmenu
 
-# change to ~/repos
-cd ~/repos
-
-# clone into dwm
-git clone https://github.com/aleksozolins/dwm62c_1080.git
-
-# change to ~/repos/dwm62c_1080
-cd ~/repos/dwm62c_1080
-
 # install dwm
-sudo make install
+cd ~/repos
+if [[ $resi == y* ]]
+   then
+   git clone https://github.com/aleksozolins/dwm62c_1080.git
+   cd ~/repos/dwm62c_1080
+   sudo make install
+   else
+   git clone https://github.com/aleksozolins/dwm62c_720.git
+   cd ~/repos/dwm62c_720
+   sudo make install
+fi
 
 # delete install files
 rm -f dwm.o config.h dwm
