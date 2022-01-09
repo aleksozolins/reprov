@@ -86,7 +86,7 @@ cd ~/repos && git clone https://github.com/LukeSmithxyz/st.git && cd ~/repos/st 
 sudo systemctl enable --now cronie 
 
 # recreate the top level mail directories
-mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins
+# mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins
 
 # install printer support
 sudo sed -i '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf
@@ -219,12 +219,12 @@ cat ~/repos/reprov_new/ips | sudo tee -a /etc/hosts
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
 # mbsync all accounts if yes
-if [[ $mailsync == y* ]]
-   then
-   mbsync -c ~/.config/mbsyncrc -a
-   else
-   echo "no mail for you!"
-fi
+# if [[ $mailsync == y* ]]
+#    then
+#    mbsync -c ~/.config/mbsyncrc -a
+#    else
+#    echo "no mail for you!"
+# fi
 
 # rebuild the grub config with microcode
 sudo grub-mkconfig -o /boot/grub/grub.cfg
