@@ -19,7 +19,7 @@ git clone https://github.com/aleksozolins/dotfiles_stow.git ~/.dotfiles/
 # Stow dotfiles
 sudo pacman -S --noconfirm stow
 cd ~/.dotfiles/
-stow arch dosbox dunst flameshot fontconfig git gnupg gpgkeys mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura isync
+stow arch dosbox dunst emacs flameshot fontconfig git gnupg gpgkeys mbsync mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
 
 # create .bash_profile symlink
 cd
@@ -45,8 +45,8 @@ install -dm0 $HOME/.dropbox-dist
 echo "If there were no errors, you should now have a home directory full of dotfiles!"
 
 # ask about syncing mail accounts.
-# echo "Would you like to synchronize all your mail accounts? yes or no ?"
-# read mailsync
+echo "Would you like to synchronize all your mail accounts? yes or no ?"
+read mailsync
 
 # ask about intel video
 echo "Would you like to install xf86-video-intel? yes or no (will use modesetting) ?"
@@ -86,7 +86,7 @@ cd ~/repos && git clone https://github.com/LukeSmithxyz/st.git && cd ~/repos/st 
 sudo systemctl enable --now cronie 
 
 # recreate the top level mail directories
-# mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins
+mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins
 
 # install printer support
 sudo sed -i '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf
@@ -151,7 +151,7 @@ makepkg -si --noconfirm
 echo "paru installed!"
 
 # install programs
-paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git tremc rtv
+paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git tremc rtv mu
 
 # install dmenu
 cd ~/repos
@@ -218,13 +218,17 @@ cat ~/repos/reprov_new/ips | sudo tee -a /etc/hosts
 # install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
-# mbsync all accounts if yes
-# if [[ $mailsync == y* ]]
-#    then
-#    mbsync -c ~/.config/mbsyncrc -a
-#    else
-#    echo "no mail for you!"
-# fi
+mbsync all accounts if yes
+if [[ $mailsync == y* ]]
+   then
+   mbsync -c ~/.config/mbsyncrc -a
+   else
+   echo "no mail for you!"
+fi
+
+# initialuze mu and index mails
+mu init --maildir=~/.local/share/mail --my-address=aleks@aleksozolins.com --my-address=aleksozolins@me.com
+mu index
 
 # rebuild the grub config with microcode
 sudo grub-mkconfig -o /boot/grub/grub.cfg

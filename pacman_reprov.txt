@@ -9,6 +9,7 @@ cronie
 cups
 dosbox
 dunst
+emacs
 feh
 firefox
 flameshot
