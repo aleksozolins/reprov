@@ -19,7 +19,7 @@ git clone https://github.com/aleksozolins/dotfiles_stow.git ~/.dotfiles/
 # Stow dotfiles
 sudo pacman -S --noconfirm stow
 cd ~/.dotfiles/
-stow arch dosbox dunst emacs flameshot fontconfig git gnupg gpgkeys mbsync mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
+stow --no-folding arch dosbox dunst emacs flameshot fontconfig git gnupg gpgkeys mbsync mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
 
 # create .bash_profile symlink
 cd
