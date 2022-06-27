@@ -13,13 +13,20 @@ cd
 [ -f ~/.bashrc ] && rm ~/.bashrc
 [ -f ~/.bash_profile ] && rm ~/.bash_profile
 
-# Clone the dotfiles repo
-git clone https://github.com/aleksozolins/dotfiles_stow.git ~/.dotfiles/
+# Clone the private dotfiles repo
+git clone https://github.com/aleksozolins/dotfiles_private.git ~/.pdotfiles/
 
-# Stow dotfiles
+# Clone the dotfiles repo
+git clone https://github.com/aleksozolins/dotfiles.git ~/.dotfiles/
+
+# Stow private dotfiles
 sudo pacman -S --noconfirm stow
 cd ~/.dotfiles/
-stow --no-folding arch dosbox dunst emacs flameshot fontconfig git gnupg gpgkeys mbsync mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
+stow --no-folding git gpgkeys mbsync
+
+# Stow dotfiles
+cd ~/.dotfiles/
+stow --no-folding arch dosbox dunst emacs flameshot fontconfig gnupg mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
 
 # create .bash_profile symlink
 cd
