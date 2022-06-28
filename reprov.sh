@@ -21,7 +21,7 @@ git clone https://github.com/aleksozolins/dotfiles.git ~/.dotfiles/
 
 # Stow private dotfiles
 sudo pacman -S --noconfirm stow
-cd ~/.dotfiles/
+cd ~/.pdotfiles/
 stow --no-folding git gpgkeys mbsync
 
 # Stow dotfiles
