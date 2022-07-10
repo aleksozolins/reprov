@@ -29,6 +29,7 @@ hunspell-en_US
 imagemagick
 intel-ucode
 isync
+lftp
 libnotify
 libreoffice-fresh
 linux
