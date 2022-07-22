@@ -120,10 +120,10 @@ fi
 if [[ $resi == y* ]]
    then
    cd ~/.dotfiles
-   stow gtk    
+   stow --no-folding gtk    
    else
    cd ~/.dotfiles
-   stow gtk_720
+   stow --no-folding gtk_720
 fi
    
 # install throttling fix if yes
