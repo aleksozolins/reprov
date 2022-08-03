@@ -1,7 +1,7 @@
 #!/bin/sh
 clear
 echo "This script will set up your public and private git repositories, populate your home directory with dotfiles, and configure various programs."
-echo "It should be run from ~/repos/reprov_new/"
+echo "It should be run from ~/repos/reprov/"
 echo "Make sure to run as user with sudo privileges and be accurate typing your credentials. You will need to type your git and GPG passphrase multiple times."
 
 read -p "Press Enter to begin..."
@@ -81,7 +81,7 @@ echo "For server use only... think nzxt. yes or no?"
 read dropbox
 
 # Install programs
-sudo pacman -S --noconfirm --needed - < ~/repos/reprov_new/pacman_reprov.txt
+sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
 # enable trim support
 sudo systemctl enable fstrim.timer
@@ -220,7 +220,7 @@ echo "session   optional  pam_gnupg.so" | sudo tee -a /etc/pam.d/system-local-lo
 systemctl enable --user mpd.service
 
 # append ips to /etc/hosts
-cat ~/repos/reprov_new/ips | sudo tee -a /etc/hosts
+cat ~/repos/reprov/ips | sudo tee -a /etc/hosts
 
 # install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
