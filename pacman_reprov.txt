@@ -59,6 +59,7 @@ pulsemixer
 python
 python-pip
 qutebrowser
+ripgrep
 rsync
 signal-desktop
 slock
