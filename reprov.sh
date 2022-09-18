@@ -267,4 +267,4 @@ echo "-Login to Firefox" >> ~/reprov_todo.txt
 echo "-Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/" >> ~/reprov_todo.txt
 echo "-If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option quotePreferredModequote quote1400x1050quote) or whatever resi to the Monitor secion of xorg.conf" >> ~/reprov_todo.txt
 echo "-Run :PluginInstall from within vim" >> ~/reprov_todo.txt
-echo "-Copy ~/Dropbox/archive/icloud/ to ~/.local/share/mail/ and re-run 'mu init' and 'mu index'" >> ~/reprov_todo.txt
+echo "-Copy ~/Dropbox/archive/mail/icloud/ to ~/.local/share/mail/ and re-run 'mu init' and 'mu index'" >> ~/reprov_todo.txt
