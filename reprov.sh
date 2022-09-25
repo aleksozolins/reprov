@@ -75,11 +75,6 @@ read throttled
 echo "Do you need broadcom wireless, maybe for the X61? yes or no?"
 read broadcom
 
-# ask about Dropbox and systemd
-echo "Enable Dropbox as a systemd unit? Note, you'll not have access to the tray icon or selective sync."
-echo "For server use only... think nzxt. yes or no?"
-read dropbox
-
 # Install programs
 sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
@@ -245,14 +240,9 @@ echo "if [ -s "${XDG_CONFIG_HOME:-$HOME/.config}/bashrc" ]; then" | sudo tee -a 
 echo "   . "${XDG_CONFIG_HOME:-$HOME/.config}/bashrc"" | sudo tee -a /etc/bash.bashrc
 echo "fi" | sudo tee -a /etc/bash.bashrc
 
-# enable Dropbox as a systemd unit if yes
-if [[ $dropbox == y* ]]
-   then
-   sudo systemctl enable dropbox@aleksozolins
-   echo "Dropbox enabled as a systemd unit."
-   else
-   echo "Zooming by...."
-fi
+# Enable Dropbox as a systemd unit
+sudo systemctl enable dropbox@aleksozolins
+echo "Dropbox enabled as a systemd unit."
 
 # lets end up in ~
 cd
@@ -261,7 +251,7 @@ echo "If you didn't see any errors, you should be all set!!!"
 echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
 echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
-echo "-Login to your Dropbox and sync ALL xdg directories. If enabled as a systemd unit run dropbox-cli status to sync." >> ~/reprov_todo.txt 
+echo "Run dropbox-cli status to sync and then dropbox-cli exclude to specify dirs to not sync." >> ~/reprov_todo.txt 
 echo "-Configure powertop.service" >> ~/reprov_todo.txt
 echo "-Login to Firefox" >> ~/reprov_todo.txt
 echo "-Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/" >> ~/reprov_todo.txt

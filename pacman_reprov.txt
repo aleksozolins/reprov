@@ -64,7 +64,6 @@ rsync
 signal-desktop
 slock
 sshfs
-stalonetray
 sxhkd
 sxiv
 system-config-printer
