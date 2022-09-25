@@ -26,7 +26,7 @@ stow --no-folding git gpgkeys mbsync ssh
 
 # Stow dotfiles
 cd ~/.dotfiles/
-stow --no-folding arch dosbox dunst emacs flameshot fontconfig gnupg mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
+stow --no-folding alacritty arch dosbox dunst emacs flameshot fontconfig gnupg mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
 
 # create .bash_profile symlink
 cd
@@ -80,9 +80,6 @@ sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
 # enable trim support
 sudo systemctl enable fstrim.timer
-
-# install a terminal emulator
-cd ~/repos && git clone https://github.com/LukeSmithxyz/st.git && cd ~/repos/st && sudo make install 
 
 # enable cronie for cron jobs
 sudo systemctl enable --now cronie 

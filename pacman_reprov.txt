@@ -1,3 +1,4 @@
+alacritty
 alsa-utils
 arandr
 arc-icon-theme
