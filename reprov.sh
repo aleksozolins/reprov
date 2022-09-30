@@ -55,10 +55,6 @@ echo "If there were no errors, you should now have a home directory full of dotf
 echo "Would you like to synchronize all your mail accounts? yes or no ?"
 read mailsync
 
-# ask about intel video
-echo "Would you like to install xf86-video-intel? yes or no (will use modesetting) ?"
-read intelvid
-
 # ask about resolution
 echo "Is this a 1080p system? yes or no for 720p ?"
 read resi
@@ -98,14 +94,6 @@ if [[ $synaptics == y* ]]
    sudo pacman -S --noconfirm xf86-input-synaptics
    else
    echo "moving on..."
-fi
-
-# install intel video driver if yes
-if [[ $intelvid == y* ]]
-   then
-   sudo pacman -S --noconfirm xf86-video-intel
-   else
-   echo "modesetting it is"  
 fi
 
 # stow appropriate gtk configs
