@@ -44,7 +44,6 @@ ncmpcpp
 neofetch
 neovim
 networkmanager
-newsboat
 nss-mdns
 ntfs-3g
 openssh

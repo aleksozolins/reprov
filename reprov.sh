@@ -26,7 +26,7 @@ stow --no-folding git gpgkeys mbsync ssh
 
 # Stow dotfiles
 cd ~/.dotfiles/
-stow --no-folding alacritty arch dosbox dunst emacs flameshot fontconfig gnupg mc mpd ncmpcpp newsboat nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
+stow --no-folding alacritty arch dosbox dunst emacs flameshot fontconfig gnupg mc mpd ncmpcpp nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
 
 # create .bash_profile symlink
 cd
@@ -138,7 +138,7 @@ makepkg -si --noconfirm
 echo "paru installed!"
 
 # install programs
-paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git tremc rtv mu
+paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git tremc mu
 
 # install dmenu
 cd ~/repos
