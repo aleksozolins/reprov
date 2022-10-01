@@ -71,6 +71,10 @@ read throttled
 echo "Do you need broadcom wireless, maybe for the X61? yes or no?"
 read broadcom
 
+# ask about non-free printer drivers for brother
+echo "Do you need non-free printer drivers from foomatic? (For Brother HL-L2360DW)? yes or no?"
+read nonfreeppds
+
 # Install programs
 sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
 
@@ -84,7 +88,8 @@ sudo systemctl enable --now cronie
 mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins
 
 # install printer support
-sudo sed -i '10s/.*/hosts: files mymachines myhostname mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns/' /etc/nsswitch.conf
+sudo sed -i '10s/.*/hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns/' /etc/nsswitch.conf
+sudo systemctl disable --now systemd-resolved.service
 sudo systemctl enable --now avahi-daemon.service
 sudo systemctl enable --now cups.service
 
@@ -121,6 +126,14 @@ if [[ $broadcom == y* ]]
    sudo pacman -S --noconfirm broadcom-wl
    else
    echo "let's keep going..."
+fi
+
+# install nonfreeppds if yes
+if [[ $nonfreeppds == y* ]]
+   then
+   sudo pacman -S --noconfirm foomatic-db-nonfree-ppds
+   else
+   echo "sistah..."
 fi
 
 # change to ~/repos
