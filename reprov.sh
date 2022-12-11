@@ -26,7 +26,7 @@ stow --no-folding git gpgkeys mbsync ssh
 
 # Stow dotfiles
 cd ~/.dotfiles/
-stow --no-folding alacritty arch dosbox dunst emacs flameshot fontconfig gnupg mc mpd ncmpcpp nvim pam-gnupg picom qutebrowser sxhkd tmux transmission w3m youtube-dl zathura
+stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux transmission w3m youtube-dl zathura
 
 # create .bash_profile symlink
 cd
