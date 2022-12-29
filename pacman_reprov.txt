@@ -57,6 +57,7 @@ powertop
 pulsemixer
 python
 python-pip
+qtpass
 qutebrowser
 ripgrep
 rsync
