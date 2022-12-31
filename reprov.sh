@@ -227,7 +227,7 @@ if [[ $mailsync == y* ]]
 fi
 
 # initialuze mu and index mails
-mu init --maildir=~/.local/share/mail --my-address=aleks@aleksozolins.com --my-address=aleksozolins@me.com
+mu init --maildir=~/.local/share/mail --my-address=aleks@aleksozolins.com --my-address=aleks@ozolins.xyz --my-address=aleks.admin@ozolins.xyz
 mu index
 
 # rebuild the grub config with microcode
