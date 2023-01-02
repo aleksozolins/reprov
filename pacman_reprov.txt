@@ -68,6 +68,7 @@ sxhkd
 sxiv
 system-config-printer
 terminus-font
+thunderbird
 tk
 tmux
 transmission-cli
