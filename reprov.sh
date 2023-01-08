@@ -115,7 +115,7 @@ fi
 if [[ $throttled == y* ]]
    then
    sudo pacman -S --noconfirm throttled
-   sudo systemctl enable --now lenovo_fix.service
+   sudo systemctl enable --now throttled.service
    else
    echo "alrighty..."
 fi
