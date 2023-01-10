@@ -4,6 +4,7 @@ arandr
 arc-icon-theme
 base
 base-devel
+calibre
 cronie
 cups
 dosbox
