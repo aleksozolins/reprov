@@ -85,7 +85,7 @@ sudo systemctl enable fstrim.timer
 sudo systemctl enable --now cronie 
 
 # recreate the top level mail directories
-mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleksozolins
+mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleks@ozolins.xyz
 
 # install printer support
 sudo sed -i '10s/.*/hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns/' /etc/nsswitch.conf
@@ -227,7 +227,7 @@ if [[ $mailsync == y* ]]
 fi
 
 # initialuze mu and index mails
-mu init --maildir=~/.local/share/mail --my-address=aleks@aleksozolins.com --my-address=aleks@ozolins.xyz --my-address=aleks.admin@ozolins.xyz
+mu init --maildir=~/.local/share/mail --my-address=aleks@ozolins.xyz --my-address=aleks.admin@ozolins.xyz
 mu index
 
 # rebuild the grub config with microcode
