@@ -69,7 +69,6 @@ sxhkd
 sxiv
 system-config-printer
 terminus-font
-thunderbird
 tk
 tmux
 transmission-cli
@@ -86,6 +85,5 @@ xorg
 xorg-xinit
 xorg-xrdb
 xss-lock
-youtube-dl
 zathura
 zathura-pdf-mupdf
