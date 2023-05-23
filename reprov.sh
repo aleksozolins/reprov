@@ -151,7 +151,7 @@ makepkg -si --noconfirm
 echo "paru installed!"
 
 # install programs
-paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git stig mu yt-dlp
+paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git mu yt-dlp
 
 # install dmenu
 cd ~/repos
