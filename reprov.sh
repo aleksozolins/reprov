@@ -213,9 +213,9 @@ echo "- [ ] Set your screenlayouts using arandr. default.sh and docked.sh. Remem
 echo "- [ ] If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option \"PreferredMode\" \"1920x1080\") for instance to the Monitor section of xorg.conf"
 echo "- [ ] Run :PluginInstall from within vim"
 echo "- [ ] Copy ~/Dropbox/archive/mail/<dirs>/ to ~/.local/share/mail/ and re-run 'mu init' and 'mu index' if you want access to old emails"
-} > ~/reprov_todo.org
+} > ~/reprov_todos.org
 
 echo "All finished!!!"
-echo "Be sure to check ~/reprov_todo.org for some post-reprov tasks."
+echo "Be sure to check ~/reprov_todos.org for some post-reprov tasks."
 reap -p "Press Enter to reboot or ctrl-c to exit to shell."
 sudo reboot
