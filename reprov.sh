@@ -133,7 +133,7 @@ if [[ $resi != y* ]]; then
 fi
 # install and delete install files
 sudo make install
-rm -f drw.o stest stest.o util.o
+rm -f drw.o stest stest.o util.o config.h dmenu dmenu.o
 
 # install dwm, switch to correct branch, and delete install files
 git clone https://github.com/aleksozolins/dwm62c.git ~/repos/dwm62c
