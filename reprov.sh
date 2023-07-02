@@ -124,31 +124,27 @@ paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dro
 # install vundle (nvim package manager)
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 
-# install dmenu and delete install files
-if [[ $resi == y* ]]; then
-   git clone https://github.com/aleksozolins/dmenu.git ~/repos/dmenu && \
-   cd ~/repos/dmenu && \
-   sudo make install && \
-   rm -f dmenu.o config.h dmenu
-else
-   git clone https://github.com/aleksozolins/dmenu_720.git ~/repos/dmenu_720 && \
-   cd ~/repos/dmenu_720 && \
-   sudo make install && \
-   rm -f dmenu.o config.h dmenu
+# install dmenu, switch to correct branch, and delete install files
+git clone https://github.com/aleksozolins/dmenu.git ~/repos/dmenu
+cd ~/repos/dmenu
+# if resi doesn't start with y, checkout to branch 720
+if [[ $resi != y* ]]; then
+   git checkout 720
 fi
+# install and delete install files
+sudo make install
+rm -f dmenu.o config.h dmenu
 
-# install dwm and delete install files
-if [[ $resi == y* ]]; then
-   git clone https://github.com/aleksozolins/dwm62c_1080.git ~/repos/dwm62c_1080 && \
-   cd ~/repos/dwm62c_1080 && \
-   sudo make install && \
-   rm -f dwm.o config.h dwm
-else
-   git clone https://github.com/aleksozolins/dwm62c_720.git ~/repos/dwm62c_720 && \
-   cd ~/repos/dwm62c_720 && \
-   sudo make install && \
-   rm -f dwm.o config.h dwm
+# install dwm, switch to correct branch, and delete install files
+git clone https://github.com/aleksozolins/dwm62c.git ~/repos/dwm62c
+cd ~/repos/dwm62c
+# if resi doesn't start with y, checkout to branch 720
+if [[ $resi != y* ]]; then
+   git checkout 720
 fi
+# install and delete install files
+sudo make install
+rm -f dwm.o config.h dwm
 
 # install dwmblocks_apo
 git clone https://github.com/aleksozolins/dwmblocks_apo.git ~/repos/dwmblocks_apo && \
