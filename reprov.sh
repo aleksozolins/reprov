@@ -88,7 +88,7 @@ sudo systemctl enable --now cronie
 mkdir ~/.local/share/mail && mkdir ~/.local/share/mail/aleks@ozolins.xyz
 
 # install printer support
-sudo sed -i '10s/.*/hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns/' /etc/nsswitch.conf
+sudo sed -i 's/^hosts: mymachines  resolve \[!UNAVAIL=return\] files myhostname dns/hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns/' /etc/nsswitch.conf
 sudo systemctl disable --now systemd-resolved.service
 sudo systemctl enable --now avahi-daemon.service
 sudo systemctl enable --now cups.service
