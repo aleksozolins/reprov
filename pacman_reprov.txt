@@ -4,6 +4,7 @@ arandr
 arc-icon-theme
 base
 base-devel
+brightnessctl
 calibre
 cronie
 cups
