@@ -6,6 +6,12 @@ echo "It should be run from ~/repos/reprov/"
 echo "Make sure to run as user with sudo privileges and be accurate typing your credentials. You will need to type your git and GPG passphrase multiple times."
 read -p "Press Enter to begin..."
 
+# cause the script to exit if there are any errors
+set -e
+
+# Create a log file and write all output and errors to it
+exec > >(tee ~/reprov_log.txt) 2>&1
+
 # append ips to /etc/hosts
 cat ~/repos/reprov/ips | sudo tee -a /etc/hosts
 
