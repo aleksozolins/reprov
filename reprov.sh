@@ -184,7 +184,6 @@ pass init aleksozolins
 # mail account sync
 echo "Would you like to synchronize all your mail accounts? yes or no ?"
 read mailsync
-mbsync all accounts if yes
 if [[ $mailsync == y* ]]
    then
    mbsync -c ~/.config/mbsyncrc -a
