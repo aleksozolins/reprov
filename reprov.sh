@@ -251,8 +251,8 @@ echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET C
 echo "Some things you might want to do now:" >> ~/reprov_todo.txt
 echo "-Run dropbox-cli status to sync and then dropbox-cli exclude to specify dirs to not sync." >> ~/reprov_todo.txt 
 echo "-Configure powertop.service" >> ~/reprov_todo.txt
-echo "-Login to Firefox" >> ~/reprov_todo.txt
+echo "-Login to Firefox and create any additional profiles as necessary (Zapier)." >> ~/reprov_todo.txt
 echo "-Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/" >> ~/reprov_todo.txt
-echo "-If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option quotePreferredModequote quote1400x1050quote) or whatever resi to the Monitor secion of xorg.conf" >> ~/reprov_todo.txt
+echo "-If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option \"PreferredMode\" \"1920x1080\") for instance to the Monitor section of xorg.conf" >> ~/reprov_todo.txt
 echo "-Run :PluginInstall from within vim" >> ~/reprov_todo.txt
 echo "-Copy ~/Dropbox/archive/mail/<dirs>/ to ~/.local/share/mail/ and re-run 'mu init' and 'mu index' if you want access to old emails">> ~/reprov_todo.txt
