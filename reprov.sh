@@ -245,14 +245,21 @@ echo "Dropbox enabled as a systemd unit."
 # lets end up in ~
 cd
 
-echo "If you didn't see any errors, you should be all set!!!"
-echo "Be sure to check ~/reprov_todo.txt for final configuration tasks."
-echo "IT'S A GOOD IDEA TO REBOOT NOW TO ENSURE ENVIRONMENTAL VARIABLES ARE SET CORRECTLY!"
-echo "Some things you might want to do now:" >> ~/reprov_todo.txt
-echo "- [ ] Run dropbox-cli status to sync and then dropbox-cli exclude to specify dirs to not sync." >> ~/reprov_todo.txt 
-echo "- [ ] Configure powertop.service" >> ~/reprov_todo.txt
-echo "- [ ] Login to Firefox and create any additional profiles as necessary (Zapier)." >> ~/reprov_todo.txt
-echo "- [ ] Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/" >> ~/reprov_todo.txt
-echo "- [ ] If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option \"PreferredMode\" \"1920x1080\") for instance to the Monitor section of xorg.conf" >> ~/reprov_todo.txt
-echo "- [ ] Run :PluginInstall from within vim" >> ~/reprov_todo.txt
-echo "- [ ] Copy ~/Dropbox/archive/mail/<dirs>/ to ~/.local/share/mail/ and re-run 'mu init' and 'mu index' if you want access to old emails">> ~/reprov_todo.txt
+{
+echo "#+TITLE: Reprov TODO List"
+echo "#+DATE: $(date +[%Y-%m-%d %a])"
+echo
+echo "* Things you might want to do now:"
+echo "- [ ] Run dropbox-cli status to sync and then dropbox-cli exclude to specify dirs to not sync."
+echo "- [ ] Configure powertop.service"
+echo "- [ ] Login to Firefox and create any additional profiles as necessary (Zapier)."
+echo "- [ ] Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/"
+echo "- [ ] If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option \"PreferredMode\" \"1920x1080\") for instance to the Monitor section of xorg.conf"
+echo "- [ ] Run :PluginInstall from within vim"
+echo "- [ ] Copy ~/Dropbox/archive/mail/<dirs>/ to ~/.local/share/mail/ and re-run 'mu init' and 'mu index' if you want access to old emails"
+} > ~/reprov_todo.org
+
+echo "All finished!!!"
+echo "Be sure to check ~/reprov_todo.org for some post-reprov tasks."
+reap -p "Press Enter to reboot or ctrl-c to exit to shell."
+sudo reboot
