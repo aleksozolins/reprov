@@ -45,6 +45,7 @@ ncmpcpp
 neofetch
 neovim
 networkmanager
+nodejs
 nss-mdns
 ntfs-3g
 openssh
