@@ -54,7 +54,6 @@ git clone https://github.com/aleksozolins/password-store.git ~/.local/share/pass
 
 # create some necessary directories and symlinks
 mkdir $HOME/dls/
-mkdir $HOME/consume/
 ln -s $HOME/Dropbox/desk/ $HOME
 ln -s $HOME/Dropbox/docs/ $HOME
 ln -s $HOME/Dropbox/pics/ $HOME
