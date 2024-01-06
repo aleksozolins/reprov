@@ -210,6 +210,7 @@ echo "- [ ] Login to Firefox and create any additional profiles as necessary (Za
 echo "- [ ] Set your screenlayouts using arandr. default.sh and docked.sh. Remember to set wallpapers there too. Use ~/.config/screenlayout/"
 echo "- [ ] If you'd like a non-standard resolution for your main display, remember to generate xorg.conf from the console (sudo X -configure), move that file from /root to /etc/X11/xorg.conf, and add (Option \"PreferredMode\" \"1920x1080\") for instance to the Monitor section of xorg.conf"
 echo "- [ ] Run :PluginInstall from within vim"
+echo "- [ ] Set up restic for backups if necessary and create the appropriate cron job"
 echo "- [ ] Copy ~/Dropbox/archive/mail/<dirs>/ to ~/.local/share/mail/ and re-run 'mu init' and 'mu index' if you want access to old emails"
 } > ~/reprov_todos.org
 
