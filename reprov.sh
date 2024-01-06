@@ -163,6 +163,9 @@ systemctl enable --user mpd.service
 # Enable Dropbox as a systemd unit
 sudo systemctl enable dropbox@aleksozolins
 
+# Enable lingering for my user so dropbox starts as soon as the system boots
+sudo loginctl enable-linger aleksozolins
+
 # install printer support (avahi)
 sudo sed -i 's/^hosts: mymachines  resolve \[!UNAVAIL=return\] files myhostname dns/hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns/' /etc/nsswitch.conf
 sudo systemctl disable --now systemd-resolved.service
