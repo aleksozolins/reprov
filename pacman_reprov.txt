@@ -64,6 +64,7 @@ python
 python-pip
 qtpass
 qutebrowser
+restic
 ripgrep
 rsync
 signal-desktop
