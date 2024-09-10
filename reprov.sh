@@ -173,8 +173,8 @@ sudo systemctl enable --now avahi-daemon.service
 sudo systemctl enable --now cups.service
 
 # import your GPG keys
-gpg --import ~/.local/share/gpg/aleks_ozolins_public_gpg_key.txt
-gpg --import ~/.local/share/gpg/aleks_ozolins_private_gpg_key.asc
+gpg --import ~/.local/share/gpg/aleks-ozolins-public-gpg-key.asc
+gpg --import ~/.local/share/gpg/aleks-ozolins-private-gpg-key.asc
 
 # define the alternate pass directory and initialize the password store
 export PASSWORD_STORE_DIR="$HOME/.local/share/password-store/"
