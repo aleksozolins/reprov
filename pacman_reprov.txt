@@ -42,8 +42,10 @@ mc
 mpc
 mpd
 mpv
+msmtp
 ncmpcpp
 neofetch
+neomutt
 neovim
 networkmanager
 nodejs
