@@ -185,7 +185,7 @@ echo "Would you like to synchronize all your mail accounts? yes or no ?"
 read mailsync
 if [[ $mailsync == y* ]]
    then
-   mbsync -c ~/.config/mbsyncrc -a
+   mbsync -a
 fi
 
 # initialuze mu and index mails
