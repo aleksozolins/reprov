@@ -75,6 +75,7 @@ sshfs
 sxhkd
 sxiv
 system-config-printer
+task
 terminus-font
 tk
 tmux
