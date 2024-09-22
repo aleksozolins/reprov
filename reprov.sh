@@ -36,7 +36,7 @@ stow --no-folding git gpgkeys mbsync ssh mutt msmtp
 
 # Stow dotfiles
 cd ~/.dotfiles/
-stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux transmission w3m youtube-dl zathura mutt
+stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux transmission w3m youtube-dl zathura mutt abook sc-im
 
 # create .bash_profile symlink
 ln -s ~/.profile ~/.bash_profile
@@ -119,7 +119,7 @@ git clone https://aur.archlinux.org/paru.git ~/repos/paru && \
 cd ~/repos/paru && makepkg -si --noconfirm
 
 # install all other programs from the AUR
-paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git mu yt-dlp abook
+paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git mu yt-dlp abook sc-im
 
 # install vundle (nvim package manager)
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
