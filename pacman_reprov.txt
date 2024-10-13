@@ -5,7 +5,6 @@ arc-icon-theme
 base
 base-devel
 brightnessctl
-calibre
 cmake
 cronie
 cups
@@ -20,7 +19,6 @@ fzf
 ghostscript
 gimp
 git
-gnucash
 gparted
 gst-libav
 gst-plugins-ugly
@@ -64,7 +62,6 @@ powertop
 pulsemixer
 python
 python-pip
-qtpass
 qutebrowser
 restic
 ripgrep

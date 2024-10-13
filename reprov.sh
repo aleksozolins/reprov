@@ -30,7 +30,8 @@ git clone https://github.com/aleksozolins/dotfiles_private.git ~/.pdotfiles/
 git clone https://github.com/aleksozolins/dotfiles.git ~/.dotfiles/
 
 # Stow private dotfiles
-sudo pacman -S --noconfirm stow
+echo "Installing stow"
+sudo pacman -S stow
 cd ~/.pdotfiles/
 stow --no-folding git gpgkeys mbsync ssh mutt msmtp
 
@@ -71,7 +72,7 @@ echo "Is this a Thinkpad with a trackpoint? Do you need xf86-input-synaptics? ye
 read synaptics
 if [[ $synaptics == y* ]]
    then
-   sudo pacman -S --noconfirm xf86-input-synaptics
+   sudo pacman -S xf86-input-synaptics
 fi
 
 # Ask about resolution and stow appropriate gtk configs
@@ -91,7 +92,7 @@ echo "Do you need NVIDIA support?"
 read nvidia
 if [[ $nvidia == y* ]]
    then
-   sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings cuda
+   sudo pacman -S nvidia nvidia-utils nvidia-settings cuda
 fi
 
 # ask about and install throttling fix if necessary
@@ -99,7 +100,7 @@ echo "Is this your Thinkpad Carbon X1? Do you need to install and enable the thr
 read throttled
 if [[ $throttled == y* ]]
    then
-   sudo pacman -S --noconfirm throttled
+   sudo pacman -S throttled
    sudo systemctl enable --now throttled.service
 fi
 
@@ -108,7 +109,7 @@ echo "Do you need broadcom wireless, maybe for the X61? yes or no?"
 read broadcom
 if [[ $broadcom == y* ]]
    then
-   sudo pacman -S --noconfirm broadcom-wl
+   sudo pacman -S broadcom-wl
 fi
 
 # ask about and install non-free printer drivers if necessary
@@ -116,18 +117,22 @@ echo "Do you need non-free printer drivers from foomatic? (For Brother HL-L2360D
 read nonfreeppds
 if [[ $nonfreeppds == y* ]]
    then
-   sudo pacman -S --noconfirm foomatic-db-nonfree-ppds
+   sudo pacman -S foomatic-db-nonfree-ppds
 fi
 
 # Install all other programs from Arch repo
+echo "Installing all packages lited in pacman_reprov.txt"
 sudo pacman -S --needed - < ~/repos/reprov/pacman_reprov.txt
 
 # install paru
 git clone https://aur.archlinux.org/paru.git ~/repos/paru && \
-cd ~/repos/paru && makepkg -si --noconfirm
+echo "Installing paru"
+cd ~/repos/paru && makepkg -si
 
-# install all other programs from the AUR
-paru -S --mflags --skippgpcheck --noconfirm --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git mu yt-dlp abook sc-im
+# Install all other programs from the AUR
+# Note that there's possibly a current problem with ttf-symbola
+echo "Installing a bunch of AUR packages"
+paru -S --mflags --skippgpcheck --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git mu yt-dlp abook sc-im
 
 # install vundle (nvim package manager)
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
