@@ -36,7 +36,7 @@ stow --no-folding git gpgkeys mbsync ssh mutt msmtp
 
 # Stow dotfiles
 cd ~/.dotfiles/
-stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux transmission w3m youtube-dl zathura mutt abook sc-im
+stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux transmission w3m youtube-dl zathura mutt abook sc-im task
 
 # create .bash_profile symlink
 ln -s ~/.profile ~/.bash_profile
@@ -74,7 +74,7 @@ if [[ $synaptics == y* ]]
    sudo pacman -S --noconfirm xf86-input-synaptics
 fi
 
-# ask about resolution and stow appropriate gtk configs
+# Ask about resolution and stow appropriate gtk configs
 echo "Is this a 1080p system? Enter yes for 1080p or no for 720p."
 read resi
 if [[ $resi == y* ]]
@@ -86,6 +86,14 @@ if [[ $resi == y* ]]
    stow --no-folding gtk_720
 fi
    
+# Ask about NVIDIA drivers
+echo "Do you need NVIDIA support?"
+read nvidia
+if [[ $nvidia == y* ]]
+   then
+   sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings cuda
+fi
+
 # ask about and install throttling fix if necessary
 echo "Is this your Thinkpad Carbon X1? Do you need to install and enable the throttling fix?? yes or no?"
 read throttled
@@ -112,7 +120,7 @@ if [[ $nonfreeppds == y* ]]
 fi
 
 # Install all other programs from Arch repo
-sudo pacman -S --noconfirm --needed - < ~/repos/reprov/pacman_reprov.txt
+sudo pacman -S --needed - < ~/repos/reprov/pacman_reprov.txt
 
 # install paru
 git clone https://aur.archlinux.org/paru.git ~/repos/paru && \
@@ -216,5 +224,5 @@ echo "- [ ] Copy ~/Dropbox/archive/mail/<dirs>/ to ~/.local/share/mail/ and re-r
 
 echo "All finished!!!"
 echo "Be sure to check ~/reprov_todos.org for some post-reprov tasks."
-reap -p "Press Enter to reboot or ctrl-c to exit to shell."
+read -p "Press Enter to reboot or ctrl-c to exit to shell."
 sudo reboot
