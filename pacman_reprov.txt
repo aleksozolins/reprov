@@ -76,7 +76,6 @@ task
 terminus-font
 tk
 tmux
-transmission-cli
 ttc-iosevka
 ttf-liberation
 ttf-linux-libertine

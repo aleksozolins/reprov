@@ -37,7 +37,7 @@ stow --no-folding git gpgkeys mbsync ssh mutt msmtp
 
 # Stow dotfiles
 cd ~/.dotfiles/
-stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux transmission w3m youtube-dl zathura mutt abook sc-im task
+stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux w3m youtube-dl zathura mutt abook sc-im task
 
 # create .bash_profile symlink
 ln -s ~/.profile ~/.bash_profile
