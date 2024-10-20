@@ -37,7 +37,7 @@ stow --no-folding git gpgkeys mbsync ssh mutt msmtp
 
 # Stow dotfiles
 cd ~/.dotfiles/
-stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux w3m youtube-dl zathura mutt abook sc-im task
+stow --no-folding alacritty arch dunst emacs flameshot fontconfig gnupg mac_linux mc mpd ncmpcpp nvim pam-gnupg picom sxhkd tmux w3m youtube-dl zathura mutt abook sc-im task taskopen
 
 # create .bash_profile symlink
 ln -s ~/.profile ~/.bash_profile
@@ -132,7 +132,7 @@ cd ~/repos/paru && makepkg -si
 # Install all other programs from the AUR
 # Note that there's possibly a current problem with ttf-symbola
 echo "Installing a bunch of AUR packages"
-paru -S --mflags --skippgpcheck --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git mu yt-dlp abook sc-im
+paru -S --mflags --skippgpcheck --removemake ttf-symbola dropbox dropbox-cli pam-gnupg-git breeze-default-cursor-theme gtk-theme-arc-gruvbox-git j4-dmenu-desktop pipe-viewer-git mu yt-dlp abook sc-im taskopen
 
 # install vundle (nvim package manager)
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
