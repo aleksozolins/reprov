@@ -33,7 +33,7 @@ git clone https://github.com/aleksozolins/dotfiles.git ~/.dotfiles/
 echo "Installing stow"
 sudo pacman -S stow
 cd ~/.pdotfiles/
-stow --no-folding git gpgkeys mbsync ssh mutt msmtp
+stow --no-folding git gpgkeys mbsync ssh mutt msmtp emacs
 
 # Stow dotfiles
 cd ~/.dotfiles/
